@@ -59,10 +59,10 @@ export default function Navbar() {
         scrolled ? 'opacity-100' : 'opacity-0'
       }`} />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           <motion.div
-            className="text-xl font-bold group cursor-pointer"
+            className="text-lg sm:text-xl font-bold group cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -74,12 +74,12 @@ export default function Navbar() {
             </span>
           </motion.div>
           <div className="hidden md:block">
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 lg:gap-8">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
+                  className={`relative px-3 lg:px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
                     activeSection === link.href.slice(1)
                       ? 'text-purple-400 bg-purple-500/10'
                       : 'text-white hover:text-purple-400 hover:bg-purple-500/5'
@@ -91,7 +91,7 @@ export default function Navbar() {
                   <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-400/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   {activeSection === link.href.slice(1) && (
                     <motion.div
-                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 lg:w-6 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
                       layoutId="navbar-indicator"
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
@@ -104,15 +104,15 @@ export default function Navbar() {
           <div className="md:hidden">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative text-white p-3 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-400/20 hover:bg-purple-500/20 transition-all duration-300"
+              className="relative text-white p-2 sm:p-3 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-400/20 hover:bg-purple-500/20 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-400/10 to-blue-400/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
               {isOpen ? (
-                <XMarkIcon className="h-5 w-5 relative z-10" />
+                <XMarkIcon className="h-5 w-5 sm:h-6 sm:w-6 relative z-10" />
               ) : (
-                <Bars3Icon className="h-5 w-5 relative z-10" />
+                <Bars3Icon className="h-5 w-5 sm:h-6 sm:w-6 relative z-10" />
               )}
             </motion.button>
           </div>
@@ -129,12 +129,12 @@ export default function Navbar() {
           >
             <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-blue-500/5" />
             
-            <div className="relative px-4 py-6 flex flex-col gap-3">
+            <div className="relative px-3 sm:px-4 py-4 sm:py-6 flex flex-col gap-2 sm:gap-3">
               {navLinks.map((link, index) => (
                 <motion.button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className={`group relative w-full text-left px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
+                  className={`group relative w-full text-left px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-medium rounded-xl transition-all duration-300 ${
                     activeSection === link.href.slice(1)
                       ? 'text-purple-400 bg-purple-500/20'
                       : 'text-white hover:text-purple-400 hover:bg-purple-500/10'
@@ -148,7 +148,7 @@ export default function Navbar() {
                   <span className="relative z-10">{link.name}</span>
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   {activeSection === link.href.slice(1) && (
-                    <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-purple-400 to-blue-400 rounded-r-full" />
+                    <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-6 sm:h-8 bg-gradient-to-b from-purple-400 to-blue-400 rounded-r-full" />
                   )}
                 </motion.button>
               ))}

@@ -66,29 +66,29 @@ export default function About() {
   }
 
   return (
-  <div id="about" className="min-h-screen scroll-mt-24 bg-gradient-to-b from-black to-gray-900 py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+  <div id="about" className="min-h-screen scroll-mt-16 sm:scroll-mt-24 bg-gradient-to-b from-black to-gray-900 py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="flex flex-col gap-16"
+          className="flex flex-col gap-12 sm:gap-16"
         >
           <motion.div variants={itemVariants} className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                 About Me
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           </motion.div>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div variants={itemVariants} className="flex flex-col gap-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
+          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+            <motion.div variants={itemVariants} className="flex flex-col gap-4 sm:gap-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">
                 Computer Science Student & Research Enthusiast
               </h3>
-              <div className="flex flex-col gap-4 text-gray-300 text-lg leading-relaxed">
+              <div className="flex flex-col gap-3 sm:gap-4 text-gray-300 text-base sm:text-lg leading-relaxed">
                 <p>
                   I&apos;m a BTech Computer Science student at DJ Sanghvi College of Engineering with a passion for 
                   machine learning, federated learning, and full-stack development. Currently maintaining a 9.0/10 CGPA 
@@ -105,27 +105,27 @@ export default function About() {
                   and modern development practices.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-8 pt-8">
+              <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-6 sm:pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">9.0</div>
-                  <div className="text-gray-400">CGPA</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-400">9.0</div>
+                  <div className="text-gray-400 text-sm sm:text-base">CGPA</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400">2+</div>
-                  <div className="text-gray-400">Internships</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-purple-400">2+</div>
+                  <div className="text-gray-400 text-sm sm:text-base">Internships</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-400">100%</div>
-                  <div className="text-gray-400">Dedication</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-pink-400">100%</div>
+                  <div className="text-gray-400 text-sm sm:text-base">Dedication</div>
                 </div>
               </div>
             </motion.div>
-            <motion.div variants={itemVariants} className="flex flex-col gap-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <motion.div variants={itemVariants} className="flex flex-col gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.title}
-                    className="group relative p-6 rounded-2xl bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
+                    className="group relative p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
                     variants={itemVariants}
                     whileHover={{ scale: 1.05, y: -8 }}
                     initial={{ opacity: 0, y: 20 }}
@@ -136,31 +136,31 @@ export default function About() {
                     <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`} />
                     
                     <div className="relative z-10">
-                      <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${skill.color} mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                        <skill.icon className="w-7 h-7 text-white drop-shadow-sm" />
+                      <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-r ${skill.color} mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <skill.icon className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-white drop-shadow-sm" />
                       </div>
-                      <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 transition-all duration-300">
+                      <h4 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 transition-all duration-300 leading-tight">
                         {skill.title}
                       </h4>
-                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
+                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed text-sm sm:text-base">
                         {skill.description}
                       </p>
                     </div>
-                    <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${skill.color} opacity-5 group-hover:opacity-15 rounded-bl-full transition-opacity duration-500`} />
+                    <div className={`absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br ${skill.color} opacity-5 group-hover:opacity-15 rounded-bl-full transition-opacity duration-500`} />
                   </motion.div>
                 ))}
               </div>
             </motion.div>
           </div>
-          <motion.div variants={itemVariants} className="flex flex-col gap-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-center text-white">
+          <motion.div variants={itemVariants} className="flex flex-col gap-6 sm:gap-8">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-white">
               Technologies I Work With
             </h3>
-            <div className="flex flex-wrap justify-center gap-4 px-2">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 px-2">
               {technologies.map((tech, index) => (
                 <motion.span
                   key={tech}
-                  className="group relative px-6 py-3 bg-gradient-to-r from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-full text-white font-medium hover:border-transparent transition-all duration-400 cursor-pointer overflow-hidden"
+                  className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-full text-white font-medium hover:border-transparent transition-all duration-400 cursor-pointer overflow-hidden text-sm sm:text-base"
                   whileHover={{ 
                     scale: 1.1, 
                     y: -4,
@@ -175,7 +175,7 @@ export default function About() {
                   <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-200 group-hover:via-purple-200 group-hover:to-pink-200 transition-all duration-300">
                     {tech}
                   </span>
-                  <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-60 transform -translate-x-1/2 -translate-y-1/2 animate-ping group-hover:animate-pulse transition-opacity duration-300" />
+                  <div className="absolute top-1/2 left-1/2 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-60 transform -translate-x-1/2 -translate-y-1/2 animate-ping group-hover:animate-pulse transition-opacity duration-300" />
                 </motion.span>
               ))}
             </div>

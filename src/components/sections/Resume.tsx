@@ -87,19 +87,19 @@ const ExperienceCard = ({ experience, index }: { experience: typeof experiences[
   return (
     <motion.div
       ref={ref}
-      className="relative pl-8 pb-16 last:pb-0"
+      className="relative pl-6 sm:pl-8 pb-12 sm:pb-16 last:pb-0"
       initial={{ opacity: 0, x: -50 }}
       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
     >
       <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-blue-400 via-purple-500 to-pink-400" />
       <motion.div 
-        className="absolute left-0 top-6 w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full transform -translate-x-1/2 ring-4 ring-black shadow-lg"
+        className="absolute left-0 top-4 sm:top-6 w-3 sm:w-4 h-3 sm:h-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full transform -translate-x-1/2 ring-2 sm:ring-4 ring-black shadow-lg"
         whileHover={{ scale: 1.3 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
       />
       <motion.div 
-        className="group relative bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
+        className="group relative bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
         whileHover={{ y: -8, scale: 1.02 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
@@ -107,39 +107,39 @@ const ExperienceCard = ({ experience, index }: { experience: typeof experiences[
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
         
         <div className="relative z-10">
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+          <div className="flex flex-col gap-3 sm:gap-4 mb-4 sm:mb-6">
             <div className="flex-1">
               <motion.h3 
-                className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-200 group-hover:to-purple-200 transition-all duration-300 mb-1"
+                className="text-lg sm:text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-200 group-hover:to-purple-200 transition-all duration-300 mb-1"
                 whileHover={{ x: 4 }}
               >
                 {experience.title}
               </motion.h3>
-              <p className="text-blue-400 font-semibold text-lg group-hover:text-blue-300 transition-colors duration-300">{experience.company}</p>
+              <p className="text-blue-400 font-semibold text-base sm:text-lg group-hover:text-blue-300 transition-colors duration-300">{experience.company}</p>
             </div>
-            <div className="flex flex-col sm:items-end mt-3 sm:mt-0 sm:ml-6">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <motion.div 
-                className="flex items-center text-gray-300 text-sm bg-gray-800/40 px-3 py-1.5 rounded-full mb-2"
+                className="flex items-center text-gray-300 text-xs sm:text-sm bg-gray-800/40 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full"
                 whileHover={{ scale: 1.05 }}
               >
-                <CalendarIcon className="w-4 h-4 mr-2 text-blue-400" />
+                <CalendarIcon className="w-3 sm:w-4 h-3 sm:h-4 mr-1 sm:mr-2 text-blue-400" />
                 {experience.duration}
               </motion.div>
               <motion.div 
-                className="flex items-center text-gray-300 text-sm bg-gray-800/40 px-3 py-1.5 rounded-full"
+                className="flex items-center text-gray-300 text-xs sm:text-sm bg-gray-800/40 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full"
                 whileHover={{ scale: 1.05 }}
               >
-                <MapPinIcon className="w-4 h-4 mr-2 text-purple-400" />
+                <MapPinIcon className="w-3 sm:w-4 h-3 sm:h-4 mr-1 sm:mr-2 text-purple-400" />
                 {experience.location}
               </motion.div>
             </div>
           </div>
 
-          <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+          <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
             {experience.description}
           </p>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2 sm:gap-3">
             {experience.achievements.map((achievement, i) => (
               <motion.div 
                 key={i} 
@@ -149,15 +149,15 @@ const ExperienceCard = ({ experience, index }: { experience: typeof experiences[
                 transition={{ delay: 0.1 + i * 0.1 }}
                 whileHover={{ x: 4 }}
               >
-                <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-200" />
-                <p className="text-gray-400 text-sm group-hover/item:text-gray-300 transition-colors duration-200 leading-relaxed">
+                <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mt-1.5 sm:mt-2 mr-2 sm:mr-4 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-200" />
+                <p className="text-gray-400 text-xs sm:text-sm group-hover/item:text-gray-300 transition-colors duration-200 leading-relaxed">
                   {achievement}
                 </p>
               </motion.div>
             ))}
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-purple-500/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-blue-400/10 to-purple-500/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </motion.div>
     </motion.div>
   )
@@ -172,7 +172,7 @@ const EducationCard = ({ education: edu, index }: { education: typeof education[
   return (
     <motion.div
       ref={ref}
-      className="group relative bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
+      className="group relative bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -182,40 +182,40 @@ const EducationCard = ({ education: edu, index }: { education: typeof education[
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-400 via-blue-500 to-pink-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
       
       <div className="relative z-10">
-        <div className="flex items-start justify-between mb-6">
+        <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
           <motion.div 
-            className="p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg"
+            className="p-2 sm:p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0"
             whileHover={{ rotate: 5 }}
           >
-            <AcademicCapIcon className="w-8 h-8 text-white" />
+            <AcademicCapIcon className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
           </motion.div>
-          <div className="ml-6 flex-grow">
+          <div className="flex-grow min-w-0">
             <motion.h3 
-              className="text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-200 group-hover:to-blue-200 transition-all duration-300 mb-1"
+              className="text-base sm:text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-200 group-hover:to-blue-200 transition-all duration-300 mb-1 leading-tight"
               whileHover={{ x: 4 }}
             >
               {edu.degree}
             </motion.h3>
-            <p className="text-purple-400 font-semibold group-hover:text-purple-300 transition-colors duration-300">{edu.school}</p>
+            <p className="text-purple-400 font-semibold text-sm sm:text-base group-hover:text-purple-300 transition-colors duration-300 mb-2">{edu.school}</p>
             <motion.div 
-              className="inline-flex items-center text-gray-300 text-sm mt-2 bg-gray-800/40 px-3 py-1.5 rounded-full"
+              className="inline-flex items-center text-gray-300 text-xs sm:text-sm bg-gray-800/40 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full"
               whileHover={{ scale: 1.05 }}
             >
-              <MapPinIcon className="w-4 h-4 mr-2 text-purple-400" />
-              {edu.location} • {edu.duration}
+              <MapPinIcon className="w-3 sm:w-4 h-3 sm:h-4 mr-1 sm:mr-2 text-purple-400" />
+              <span className="truncate">{edu.location} • {edu.duration}</span>
             </motion.div>
           </div>
         </div>
 
-        <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+        <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
           {edu.description}
         </p>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {edu.coursework.map((course, i) => (
             <motion.span
               key={course}
-              className="px-3 py-1.5 bg-gray-800/60 text-purple-300 rounded-full text-xs font-medium border border-purple-400/20 hover:border-purple-400/40 hover:bg-purple-500/10 transition-all duration-300"
+              className="px-2 sm:px-3 py-1 sm:py-1.5 bg-gray-800/60 text-purple-300 rounded-full text-xs font-medium border border-purple-400/20 hover:border-purple-400/40 hover:bg-purple-500/10 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 + i * 0.05 }}
@@ -226,7 +226,7 @@ const EducationCard = ({ education: edu, index }: { education: typeof education[
           ))}
         </div>
       </div>
-      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-400/10 to-blue-500/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-purple-400/10 to-blue-500/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </motion.div>
   )
 }
@@ -238,33 +238,33 @@ export default function Resume() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 scroll-mt-16 sm:scroll-mt-24" id="resume">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Resume</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full mb-6" />
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full mb-4 sm:mb-6" />
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             My professional journey, education, and skills that make me a versatile developer.
           </p>
         </motion.div>
-        <div className="grid lg:grid-cols-2 gap-20 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 xl:gap-24">
           <div>
             <motion.div
-              className="flex items-center mb-12"
+              className="flex items-center mb-8 sm:mb-12"
               initial={{ opacity: 0, x: -30 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <BriefcaseIcon className="w-8 h-8 text-blue-400 mr-4" />
-              <h3 className="text-3xl font-semibold text-white">Experience</h3>
+              <BriefcaseIcon className="w-6 sm:w-8 h-6 sm:h-8 text-blue-400 mr-3 sm:mr-4" />
+              <h3 className="text-2xl sm:text-3xl font-semibold text-white">Experience</h3>
             </motion.div>
 
             <div className="relative">
@@ -273,18 +273,18 @@ export default function Resume() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-12 sm:gap-16 lg:gap-20">
             <div>
               <motion.div
-                className="flex items-center mb-12"
+                className="flex items-center mb-8 sm:mb-12"
                 initial={{ opacity: 0, x: 30 }}
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <AcademicCapIcon className="w-8 h-8 text-purple-400 mr-4" />
-                <h3 className="text-3xl font-semibold text-white">Education</h3>
+                <AcademicCapIcon className="w-6 sm:w-8 h-6 sm:h-8 text-purple-400 mr-3 sm:mr-4" />
+                <h3 className="text-2xl sm:text-3xl font-semibold text-white">Education</h3>
               </motion.div>
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-6 sm:gap-8">
                 {education.map((edu, index) => (
                   <EducationCard key={edu.id} education={edu} index={index} />
                 ))}
@@ -293,20 +293,20 @@ export default function Resume() {
           </div>
         </div>
         <motion.div
-          className="mt-24"
+          className="mt-16 sm:mt-20 lg:mt-24"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h3 className="text-3xl font-semibold text-white text-center mb-12">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-white text-center mb-8 sm:mb-12">
             Skills & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Technologies</span>
           </h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {skills.map((skillGroup, index) => (
               <motion.div
                 key={skillGroup.category}
-                className="group relative bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
+                className="group relative bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-gray-800/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50 hover:border-transparent transition-all duration-500 overflow-hidden"
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={inView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: 20 }}
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
@@ -315,36 +315,36 @@ export default function Resume() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="flex items-center mb-6">
-                    <div className={`w-3 h-3 rounded-full mr-3 ${
-                      skillGroup.category === 'Frontend' ? 'bg-blue-400' :
-                      skillGroup.category === 'Backend' ? 'bg-green-400' :
-                      skillGroup.category === 'Tools' ? 'bg-purple-400' :
+                  <div className="flex items-center mb-4 sm:mb-6">
+                    <div className={`w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full mr-2 sm:mr-3 ${
+                      skillGroup.category === 'Languages' ? 'bg-blue-400' :
+                      skillGroup.category === 'Web Development' ? 'bg-green-400' :
+                      skillGroup.category === 'Cloud & DevOps' ? 'bg-purple-400' :
                       'bg-pink-400'
                     }`} />
-                    <h4 className="text-lg font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-200 group-hover:to-purple-200 transition-all duration-300">
+                    <h4 className="text-base sm:text-lg font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-200 group-hover:to-purple-200 transition-all duration-300">
                       {skillGroup.category}
                     </h4>
                   </div>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-2 sm:gap-3">
                     {skillGroup.items.map((skill, skillIndex) => (
                       <motion.div 
                         key={skill} 
-                        className="flex items-center text-gray-300 text-sm py-2 px-3 rounded-lg bg-gray-800/30 group-hover:bg-gray-700/40 transition-all duration-300 hover:text-white hover:translate-x-1"
+                        className="flex items-center text-gray-300 text-xs sm:text-sm py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg bg-gray-800/30 group-hover:bg-gray-700/40 transition-all duration-300 hover:text-white hover:translate-x-1"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.9 + index * 0.1 + skillIndex * 0.05 }}
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-gray-500 mr-3 group-hover:bg-blue-400 transition-colors duration-300" />
+                        <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-gray-500 mr-2 sm:mr-3 group-hover:bg-blue-400 transition-colors duration-300" />
                         {skill}
                       </motion.div>
                     ))}
                   </div>
                 </div>
-                <div className={`absolute top-0 right-0 w-16 h-16 ${
-                  skillGroup.category === 'Frontend' ? 'bg-blue-400/10' :
-                  skillGroup.category === 'Backend' ? 'bg-green-400/10' :
-                  skillGroup.category === 'Tools' ? 'bg-purple-400/10' :
+                <div className={`absolute top-0 right-0 w-12 sm:w-16 h-12 sm:h-16 ${
+                  skillGroup.category === 'Languages' ? 'bg-blue-400/10' :
+                  skillGroup.category === 'Web Development' ? 'bg-green-400/10' :
+                  skillGroup.category === 'Cloud & DevOps' ? 'bg-purple-400/10' :
                   'bg-pink-400/10'
                 } rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               </motion.div>
@@ -352,7 +352,7 @@ export default function Resume() {
           </div>
         </motion.div>
         <motion.div
-          className="text-center mt-24"
+          className="text-center mt-16 sm:mt-20 lg:mt-24"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -360,7 +360,7 @@ export default function Resume() {
           <motion.a
             href="/Aaditya Resume.pdf"
             download="Aaditya_Malani_Resume.pdf"
-            className="group relative inline-block px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-size-200 bg-pos-0 text-white font-semibold rounded-2xl transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 overflow-hidden"
+            className="group relative inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-size-200 bg-pos-0 text-white font-semibold rounded-2xl transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 overflow-hidden text-sm sm:text-base"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
             style={{
@@ -380,7 +380,7 @@ export default function Resume() {
             </div>
             
             <span className="relative z-10 flex items-center justify-center">
-              <ArrowDownTrayIcon className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+              <ArrowDownTrayIcon className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-bounce" />
               Download Resume
             </span>
           </motion.a>

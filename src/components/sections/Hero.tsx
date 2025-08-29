@@ -62,18 +62,18 @@ export default function Hero() {
   ))
 
   return (
-    <div ref={heroRef} className="relative sm:mt-10 min-h-screen flex items-center justify-center overflow-hidden">
+    <div ref={heroRef} className="relative mt-14 sm:mt-16 min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
       <ThreeBackground />
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="flex flex-col gap-8"
+          className="flex flex-col gap-6 sm:gap-8"
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 sm:gap-4">
             <motion.p
-              className="text-blue-400 text-lg sm:text-xl font-light tracking-wider uppercase"
+              className="text-blue-400 text-sm sm:text-lg md:text-xl font-light tracking-wider uppercase"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -81,9 +81,9 @@ export default function Hero() {
               Hello, I&apos;m
             </motion.p>
             
-            <h1 className="text-2xl sm:text-5xl lg:text-5xl font-bold text-white mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-4 leading-tight">
               <div data-text-boundary className="inline-block">
-                <div className="mb-2">
+                <div className="mb-1 sm:mb-2">
                   <motion.span
                     className="inline-block"
                     initial={{ opacity: 0, x: -50 }}
@@ -93,14 +93,14 @@ export default function Hero() {
                     Aaditya Malani
                   </motion.span>
                 </div>
-                <div ref={titleRef} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400">
+                <div ref={titleRef} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                   {letters}
                 </div>
               </div>
             </h1>
           </div>
           <motion.p
-            className="text-xl sm:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-light max-w-4xl mx-auto leading-relaxed px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5 }}
@@ -108,14 +108,14 @@ export default function Hero() {
             BTech Computer Science student passionate about machine learning, federated learning, and building innovative web applications with modern technologies
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-6 sm:pt-8 px-4 sm:px-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 2 }}
           >
             <motion.button
               onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-size-200 bg-pos-0 text-white font-semibold rounded-2xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25"
+              className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-size-200 bg-pos-0 text-white font-semibold rounded-2xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 w-full sm:w-auto text-sm sm:text-base"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               style={{
@@ -150,7 +150,7 @@ export default function Hero() {
 
             <motion.button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-8 py-4 border-2 border-purple-400/50 text-white font-semibold rounded-2xl backdrop-blur-sm hover:border-purple-400 transition-all duration-300 overflow-hidden"
+              className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-purple-400/50 text-white font-semibold rounded-2xl backdrop-blur-sm hover:border-purple-400 transition-all duration-300 overflow-hidden w-full sm:w-auto text-sm sm:text-base"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -165,7 +165,7 @@ export default function Hero() {
         </motion.div>
       </div>
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group"
         onClick={scrollToAbout}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -173,23 +173,23 @@ export default function Hero() {
         whileHover={{ scale: 1.1 }}
       >
         <motion.div
-          className="flex flex-col items-center gap-3 text-white/60 hover:text-white transition-colors duration-300"
+          className="flex flex-col items-center gap-2 sm:gap-3 text-white/60 hover:text-white transition-colors duration-300"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <span className="text-sm font-light tracking-wider uppercase">Scroll</span>
+          <span className="text-xs sm:text-sm font-light tracking-wider uppercase">Scroll</span>
           <div className="relative">
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full group-hover:border-purple-400 transition-colors duration-300">
+            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full group-hover:border-purple-400 transition-colors duration-300">
               <motion.div
-                className="w-1 h-2 bg-white/60 rounded-full mx-auto mt-2 group-hover:bg-purple-400"
-                animate={{ y: [0, 16, 0] }}
+                className="w-1 h-1.5 sm:h-2 bg-white/60 rounded-full mx-auto mt-1.5 sm:mt-2 group-hover:bg-purple-400"
+                animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
               />
             </div>
-            <div className="absolute inset-0 w-6 h-10 border-2 border-purple-400 rounded-full opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-300" />
+            <div className="absolute inset-0 w-5 h-8 sm:w-6 sm:h-10 border-2 border-purple-400 rounded-full opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-300" />
           </div>
           
-          <ChevronDownIcon className="w-5 h-5 group-hover:text-purple-400 transition-colors duration-300" />
+          <ChevronDownIcon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:text-purple-400 transition-colors duration-300" />
         </motion.div>
       </motion.div>
     </div>

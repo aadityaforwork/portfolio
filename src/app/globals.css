@@ -7,6 +7,18 @@ html {
   font-size: 16px;
 }
 
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
 body {
   background: #000000;
   color: #ffffff;
@@ -23,7 +35,13 @@ html, body, #__next {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -41,10 +59,18 @@ html, body, #__next {
   background: linear-gradient(135deg, #7c3aed, #2563eb);
 }
 
-
 @supports (scroll-behavior: smooth) {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
